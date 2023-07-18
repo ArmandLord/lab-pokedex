@@ -8,8 +8,6 @@ This exercise allows you to practice and apply the concepts and techniques taugh
 
 Upon completion of this exercise, you will be able to:
 
-Here's the same text translated into English:
-
 - Install and use React Native Stack Navigator.
 - Create a React Native app with multiple screens.
 - Consume the Pokemon API to obtain information about pokemons.

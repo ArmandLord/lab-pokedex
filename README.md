@@ -8,24 +8,26 @@ This exercise allows you to practice and apply the concepts and techniques taugh
 
 Upon completion of this exercise, you will be able to:
 
+Here's the same text translated into English:
+
 - Install and use React Native Stack Navigator.
 - Create a React Native app with multiple screens.
-- Consumir la API de Pokemon para obtener información de los pokemons.
-- Utilizar context y useReducer para manejar la información de los pokemons.
-- Ver el detalle de un pokemon.
-- Renderizar una lista de pokemons.
-- Crear un formulario para añadir un nuevo pokemon a la lista.
-- Crear los estilos de la aplicación.
+- Consume the Pokemon API to obtain information about pokemons.
+- Use context and useReducer to manage information about pokemons.
+- View the details of a pokemon.
+- Render a list of pokemons.
+- Create a form to add a new pokemon to the list.
+- Create the styles of the application.
 
 ## Introduction
 
-En este lab vamos a crear una aplicación de React Native que nos permita ver una lista de pokemons y añadir nuevos pokemons a la lista y ver el detalle de cada pokemon. Para ello, vamos a utilizar la API de Pokemon <https://pokeapi.co/> y la libreria React Navigation <https://reactnavigation.org/> para crear la navegación entre pantallas.
+In this lab, we will create a React Native application that allows us to view a list of pokemons, add new pokemons to the list, and view the details of each pokemon. To achieve this, we will use the Pokemon API <https://pokeapi.co/> and the React Navigation library <https://reactnavigation.org/> to handle navigation between screens.
 
 ## Requirements
 
 - Fork this repo.
 - Clone this repo.
-- Run `nvm use` to use the node version specified into the `.nvmrc` file.
+- Run `nvm use` to use the node version specified in the `.nvmrc` file.
 
 ```bash
 nvm use
@@ -54,89 +56,89 @@ git commit -m "done"
 git push origin master
 ```
 
-- Create Pull Request so your TAs can check up your work.
+- Create a Pull Request so your TAs can review your work.
 
 ## Example
 
-This is how the app should looks like:
+This is how the app should look like:
 
 !TODO: Add GIF
 
 ## Instructions
 
-### Iteration 1: Crear la estructura de la aplicación
+### Iteration 1: Create the application structure
 
-- Crea una carpeta `src` en la raíz del proyecto.
-- Crea una carpeta `navigation` en la raíz del proyecto.
-- Crea una carpeta `components` dentro de `src`.
-- Crea una carpeta `screens` dentro de `src`.
-- Crea una carpeta `hooks` dentro de `src`.
-- Crea una carpeta `context` dentro de `src`.
+- Create a `src` folder at the root of the project.
+- Create a `navigation` folder at the root of the project.
+- Create a `components` folder inside `src`.
+- Create a `screens` folder inside `src`.
+- Create a `hooks` folder inside `src`.
+- Create a `context` folder inside `src`.
 
-### Iteration 2: Crear la navegación
+### Iteration 2: Create the navigation
 
-- Instala `Stack Navigator` de `React Navigation`.
-- Crea un archivo dentro de `navigation` llamado `AppNavigator.js`.
-- Crea un componente `AppNavigator` que renderice un `Stack Navigator` con tres pantallas: `Home`, `PokemonDetail` y `AddPokemon`.
-- Crea la configuración de las rutas para cada pantalla.
-- Utiliza el componente `AppNavigator` en `App.tsx`.
+- Install `Stack Navigator` from `React Navigation`.
+- Create a file inside `navigation` called `AppNavigator.js`.
+- Create an `AppNavigator` component that renders a `Stack Navigator` with three screens: `Home`, `PokemonDetail`, and `AddPokemon`.
+- Set up the route configuration for each screen.
+- Use the `AppNavigator` component in `App.tsx`.
 
-**Nota: No olvides tipar los props de `AppNavigator` con `PropTypes`**
+**Note: Don't forget to type the props of `AppNavigator` with `PropTypes`.**
 
-### Iteration 3: Crear el contexto
+### Iteration 3: Create the context
 
-- Configura el contexto de la aplicación. Recuerda utilizar `useReducer` para manejar el estado de la aplicación.
-- Proporciona el contexto a la aplicación.
+- Configure the application's context. Remember to use `useReducer` to manage the application state.
+- Provide the context to the application.
 
-**Nota: No olvides crear todos los tipos necesarios para el contexto.**
+**Note: Don't forget to create all the necessary types for the context.**
 
-### Iteration 4: Crear los screens
+### Iteration 4: Create the screens
 
-- Crea un componente `HomeScreen` que renderice un `SafeAreaView` con un `FlatList` que muestre la lista de pokemons.
-- Crea un componente `PokemonDetailScreen` que renderice un `SafeAreaView` con la información del pokemon.
-- Crea un componente `AddPokemonScreen` que renderice un `SafeAreaView` con un formulario para añadir un nuevo pokemon a la lista.
+- Create a `HomeScreen` component that renders a `SafeAreaView` with a `FlatList` displaying the list of pokemons.
+- Create a `PokemonDetailScreen` component that renders a `SafeAreaView` with the information of the pokemon.
+- Create an `AddPokemonScreen` component that renders a `SafeAreaView` with a form to add a new pokemon to the list.
 
-### Iteration 5: Obtener y renderizar la lista de pokemons
+### Iteration 5: Fetch and render the list of pokemons
 
-- Crea un hook `useFetch` que nos permita hacer peticiones a la API de Pokemon. (puedes utilizar axios.create para crear una instancia de axios con la url base de la API).
-- Obten la lista de pokemons utilizando el hook `useFetch` y guárdala en el estado del contexto. Puedes utilizar el siguiente endpoint: <https://pokeapi.co/api/v2/pokemon?limit=151>
-- Por ahora renderiza solo una lista de los nombres de pokemons en la pantalla `HomeScreen` utilizando el contexto.
+- Create a hook called `useFetch` that allows us to make requests to the Pokemon API (you can use `axios.create` to create an axios instance with the base URL of the API).
+- Fetch the list of pokemons using the `useFetch` hook and save it in the context state. You can use the following endpoint: <https://pokeapi.co/api/v2/pokemon?limit=151>
+- For now, render only a list of the pokemon names on the `HomeScreen` using the context.
 
-**Nota: No olvides crear todos los tipos necesarios para el hook `useFetch`.**
+**Note: Don't forget to create all the necessary types for the `useFetch` hook.**
 
-### Iteration 6: Crear el componente PokemonList y PokemonCard
+### Iteration 6: Create the PokemonList and PokemonCard components
 
-- Crea un componente `PokemonList` que reciba como prop la lista de pokemons y renderice un `FlatList` con los pokemons.
-- Para el renderItem crea y utiliza un componente `PokemonCard` que reciba como prop el pokemon y renderice el nombre del pokemon, su número (id) y su imagen.
-- Tip: Necesitaras crear una funcion que te permita obtener el id de un pokemon a partir de su url y puedes utilizar el siguiente endpoint para obtener la imagen de un pokemon: <https://pokeres.bastionbot.org/images/pokemon/${id}.png>
-- Utiliza el componente `PokemonList` en la pantalla `HomeScreen`.
+- Create a `PokemonList` component that receives the list of pokemons as a prop and renders a `FlatList` with the pokemons.
+- For the `renderItem`, create and use a `PokemonCard` component that receives the pokemon as a prop and renders the pokemon's name, number (id), and image.
+- Tip: You'll need to create a function that allows you to get the id of a pokemon from its URL, and you can use the following endpoint to get a pokemon's image: <https://pokeres.bastionbot.org/images/pokemon/${id}.png>
+- Use the `PokemonList` component on the `HomeScreen`.
 
-**Nota: El componente `PokemonCard` debe permitir al usuario navegar a la pantalla `PokemonDetailScreen` al hacer click sobre el.**
+**Note: The `PokemonCard` component should allow the user to navigate to the `PokemonDetailScreen` when clicked on.**
 
-### Iteration 7: Obtener y renderizar el detalle de un pokemon
+### Iteration 7: Fetch and render the details of a pokemon
 
-- Obtén la información de un pokemon utilizando el hook `useFetch` y guárdala en EL estado del contexto. Puedes utilizar el siguiente endpoint: <https://pokeapi.co/api/v2/pokemon/${id}>
-- Utiliza el contexto para obtener la información del pokemon en la pantalla `PokemonDetailScreen` y renderiza su nombre, número (id), imagen, tipo y habilidades.
-- Puedes crear un componente `PokemonDetail` para renderizar la información del pokemon o renderizarla directamente en la pantalla `PokemonDetailScreen`.
-- Crea un botón que permita al usuario navegar a la pantalla `AddPokemonScreen` y asegurate que la navegacion entre pantallas funcione correctamente.
+- Fetch the information of a pokemon using the `useFetch` hook and save it in the context state. You can use the following endpoint: <https://pokeapi.co/api/v2/pokemon/${id}>
+- Use the context to get the pokemon information on the `PokemonDetailScreen` and render its name, number (id), image, type, and abilities.
+- You can create a `PokemonDetail` component to render the pokemon information or render it directly on the `PokemonDetailScreen`.
+- Create a button that allows the user to navigate to the `AddPokemonScreen`, and make sure the navigation between screens works correctly.
 
-### Iteration 8: Crear el formulario para añadir un nuevo pokemon
+### Iteration 8: Create the form to add a new pokemon
 
-- Crea un formulario en la pantalla `AddPokemonScreen` que permita al usuario añadir un nuevo pokemon a la lista.
-- El formulario debe tener los siguientes campos: nombre, número (id), imagen, tipo y habilidades.
-- Agrega validaciones a los campos del formulario.
-- Al hacer submit del formulario, el nuevo pokemon debe añadirse a la lista de pokemons y enviar al usuario a la pantalla `HomeScreen`.
-- Utiliza el contexto para añadir el nuevo pokemon a la lista y asegurate que la lista se actualice correctamente. Puedes crear un nuevo estado en el contexto para guardar el nuevo pokemon.
+- Create a form on the `AddPokemonScreen` that allows the user to add a new pokemon to the list.
+- The form should have the following fields: name, number (id), image, type, and abilities.
+- Add validations to the form fields.
+- When the form is submitted, the new pokemon should be added to the list of pokemons, and the user should be redirected to the `HomeScreen`.
+- Use the context to add the new pokemon to the list and ensure that the list updates correctly. You can create a new state in the context to store the new pokemon.
 
-### Iteration 9: Crear los estilos de la aplicación
+### Iteration 9: Create the application styles
 
-- Crea un archivo `theme.js` dentro de `src` y exporta un objeto con los colores de la aplicación.
-- Crea un archivo `styles.js` dentro de `src` y exporta un objeto con los estilos de la aplicación.
-- Los estilos quedan a tu elección, pero asegurate de que la aplicación se vea bien en iOS y Android. También puedes basarte en el diseño de la aplicación de ejemplo.
+- Create a file `theme.js` inside `src` and export an object with the application's colors.
+- Create a file `styles.js` inside `src` and export an object with the application's styles.
+- The styles are up to you, but make sure the application looks good on both iOS and Android. You can also use the design of the example application as a reference.
 
 ## Bonus:
 
-- Crea un nuevo Screen `PokemonSearchScreen` que permita al usuario buscar un pokemon por su nombre o número (id).
-- Integra Bottom Tabs Navigator para crear una navegación entre las pantallas `HomeScreen` y `PokemonSearchScreen`.
+- Create a new Screen `PokemonSearchScreen` that allows the user to search for a pokemon by its name or number (id).
+- Integrate the Bottom Tabs Navigator to create navigation between the `HomeScreen` and `PokemonSearchScreen`.
 
 Happy coding! 💙

@@ -62,7 +62,7 @@ git push origin master
 
 This is how the app should look like:
 
-!TODO: Add GIF
+![pokedex](./assets/pokedex.GIF)
 
 ## Instructions
 
